@@ -2,7 +2,7 @@ let question1 = prompt("Введите 1, если хотите пиццу с г
 let question2 = prompt("Сколько штук пицц вы хотите?");
 let str;
 function orderingPizza(arg1, arg2) {
-    switch (question1) {
+    switch (arg1) {
         case "1":
             arg1 = "пицца с грибами";
             break;
@@ -19,14 +19,16 @@ function orderingPizza(arg1, arg2) {
             break;
 
     }
-    if (isNaN(question2) || question2 == "") {
+    if (!question2.trim()) {
         arg2 = 1;
+        str = "Ваш заказ: " + arg1 + " (" + arg2 + " шт.)";
     }
-    if (question2 == "" && isNaN(question1) && question1 == "") {
+    if (!question1.trim() && !question2.trim()) {
         arg2 = 1;
         arg1 = "Фирмення пицца"
+        str = "Ваш заказ: " + arg1 + " (" + arg2 + " шт.)";
     }
-    if (isNaN(question2) || isNaN(question1) || question1 > 4 || question2 < 1 || question2 == "" && question1 == "") {
+    if (question1 > 4 && question2 < 1) {
         str = "Произошла ошибка, повторите заказ.";
     }
     else {

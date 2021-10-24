@@ -4,35 +4,35 @@ let str;
 function orderingPizza(arg1, arg2) {
     switch (arg1) {
         case "1":
-            arg1 = "пицца с грибами";
+            question1 = "пицца с грибами";
             break;
         case "2":
-            arg1 = "пицца с курицей и ананасом";
+            question1 = "пицца с курицей и ананасом";
             break;
         case "3":
-            arg1 = "пицца с сыром";
+            question1 = "пицца с сыром";
             break;
         case "4":
-            arg1 = "пицца с помидорами и колбасой";
+            question1 = "пицца с помидорами и колбасой";
             break;
         default:
             break;
 
     }
-    if (!question2.trim()) {
-        arg2 = 1;
-        str = "Ваш заказ: " + arg1 + " (" + arg2 + " шт.)";
+    if (!arg2.trim()) {
+        question2 = 1;
+        str = "Ваш заказ: " + question1 + " (" + question2 + " шт.)";
     }
-    if (!question1.trim() && !question2.trim()) {
-        arg2 = 1;
-        arg1 = "Фирмення пицца"
-        str = "Ваш заказ: " + arg1 + " (" + arg2 + " шт.)";
+    if (!arg1.trim() && !arg2.trim()) {
+        question2 = 1;
+        question1 = "Фирмення пицца"
+        str = "Ваш заказ: " + question1 + " (" + question2 + " шт.)";
     }
     if (question1 > 4 && question2 < 1) {
         str = "Произошла ошибка, повторите заказ.";
     }
     else {
-        str = "Ваш заказ: " + arg1 + " (" + arg2 + " шт.)";
+        str = "Ваш заказ: " + question1 + " (" + question2 + " шт.)";
     }
     alert(str);
     return str;

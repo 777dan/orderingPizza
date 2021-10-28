@@ -19,10 +19,10 @@ function orderingPizza(arg1, arg2) {
             break;
 
     }
-    if (arg1.trim() || arg2.trim() && isNaN(arg1) || isNaN(arg2) || arg1 > 4 || arg1 < 1 || arg2 < 1) {
-        str = "Произошла ошибка, повторите заказ.";
+    if (arg1 >= 1 && arg1 <= 4 && arg2 >= 1) {
+        str = "Ваш заказ: " + question1 + " (" + question2 + " шт.)";
     }
-    if (!arg2.trim()) {
+    else if (!arg2.trim()) {
         if (!arg1.trim()) {
             question2 = 1;
             question1 = "Фирмення пицца"
@@ -32,8 +32,8 @@ function orderingPizza(arg1, arg2) {
             str = "Ваш заказ: " + question1 + " (" + question2 + " шт.)";
         }
     }
-    if (arg1 >= 1 && arg1 <= 4 && arg2 >= 1) {
-        str = "Ваш заказ: " + question1 + " (" + question2 + " шт.)";
+    else {
+        str = "Произошла ошибка, повторите заказ.";
     }
     return str;
 }
